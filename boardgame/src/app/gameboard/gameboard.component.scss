@@ -1,0 +1,11 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    // background-color: black;
+    background-image: url('/assets/images/background-3.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
