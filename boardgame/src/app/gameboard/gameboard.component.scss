@@ -3,9 +3,16 @@
     display: grid;
     grid-template-columns: 1fr;
     height: 100vh;
-    // background-color: black;
     background-image: url('/assets/images/background-3.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    .tile-wrapper {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, 100px);
+        gap: 10px;
+        // justify-content: center;
+        // align-content: center;
+    }
 }

@@ -1,0 +1,22 @@
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: auto 40%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    #id {
+        font-size: x-large;
+        padding: 4px;
+        padding: 0px;
+    }
+
+    #description {
+        font-size: larger;
+        padding: 0px;
+    }
+}

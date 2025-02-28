@@ -1,5 +1,7 @@
 <!-- <div class="body"> -->
     <div class="container">
-        <!-- <p>check</p> -->
+        <div class="tile-wrapper">
+            <app-gameboard-tile *ngFor="let tile of tiles" [tileId]="tile.id" [tileDescription]="tile.description"></app-gameboard-tile>
+        </div>
     </div>
 <!-- </div> -->
