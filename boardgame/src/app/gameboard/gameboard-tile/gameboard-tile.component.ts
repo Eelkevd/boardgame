@@ -7,6 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './gameboard-tile.component.scss'
 })
 export class GameboardTileComponent {
-  @Input() tileId!: number;
-  @Input() tileDescription!: string;
+  @Input() tileNumber!: number;
+  @Input() tileId!: string;
+  @Input() tileName!: string;
+  @Input() tileEffect!: string;
+
 }
+
