@@ -12,21 +12,25 @@ import { Tile } from '../models/Tile';
 export class GameboardComponent {
   tiles: Tile[] = [];
 
-  constructor() {
-    // this.generateTiles(10)
-  }
+  // ngOnChanges() {
+  //   this.generateTiles();
+  // }
 
+  constructor() {
+    this.generateTiles(10)
+  }
+  
   private generateTiles(count: number) {
-    for (let i = 1; i <= count; i++) {
+    this.tiles.push(new Tile(1, "start-tile", "Start", "Begin your journey"))
+    for (let i = 2; i <= count; i++) {
       this.tiles.push(createTileAttributes(i));
     }
-    console.log(this.tiles)
+    console.log(this.tiles);
   }
 }
 
-
 function createTileAttributes(tileNumber: number): Tile {
-  const tileName = ["start", "pitfall", "forest", "merchant"]
+  const tileName = ["pitfall", "forest", "merchant"]
 
   return new Tile(
     tileNumber,

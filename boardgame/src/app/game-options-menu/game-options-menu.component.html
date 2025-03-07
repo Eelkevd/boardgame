@@ -1,1 +1,7 @@
-<p>game-options-menu works!</p>
+<div class="container">
+    <form (submit)="onSubmit(event)">
+        <label for="tiles">Amount of tiles</label>
+        <input type="number" id="tiles" [(ngModel)]="tileCount" name="tiles">
+        <input type="submit" value="Submit">
+    </form>
+</div>

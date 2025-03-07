@@ -1,8 +1,8 @@
 <main class="main">
-  
- <div class="content">
-  <app-gameboard></app-gameboard>
- </div>
+    <div class="content">
+        <app-game-options-menu (tilesCountChange)="updateTileCount($event)"></app-game-options-menu>
+        <app-gameboard [tileCount]="tileCount"></app-gameboard>
+    </div>
 </main>
 
 <router-outlet />
