@@ -1,4 +1,10 @@
 .container {
-    background-color: rgba(165, 140, 140, 0.275);
+    background-color: rgb(0, 0, 0);
     padding: 0px;
+    height: 10vh;
+
+    form {
+        display: grid;
+        color: wheat;
+    }
 }

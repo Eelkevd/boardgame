@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GameboardComponent } from './gameboard/gameboard.component';
 import { GameOptionsMenuComponent } from './game-options-menu/game-options-menu.component';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GameboardComponent, GameOptionsMenuComponent],
+  imports: [RouterOutlet, GameboardComponent, GameOptionsMenuComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

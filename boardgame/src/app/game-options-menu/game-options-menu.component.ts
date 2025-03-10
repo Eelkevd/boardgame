@@ -1,9 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-// import { EventEmitter } from 'stream';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-game-options-menu',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './game-options-menu.component.html',
   styleUrl: './game-options-menu.component.scss'
 })
@@ -13,6 +13,9 @@ export class GameOptionsMenuComponent {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    this.tileCountChange.emit(this.tileCount);
+    const parsedTileCount = Number(this.tileCount);
+    if (!isNaN(parsedTileCount) && parsedTileCount > 0) {
+      this.tileCountChange.emit(parsedTileCount);
+    }
   }
 }

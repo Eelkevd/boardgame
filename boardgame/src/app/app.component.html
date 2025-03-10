@@ -1,6 +1,6 @@
 <main class="main">
-    <div class="content">
-        <app-game-options-menu (tilesCountChange)="updateTileCount($event)"></app-game-options-menu>
+    <div class="container">
+        <app-game-options-menu (tileCountChange)="updateTileCount($event)"></app-game-options-menu>
         <app-gameboard [tileCount]="tileCount"></app-gameboard>
     </div>
 </main>

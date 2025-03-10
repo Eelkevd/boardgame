@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GameboardTileComponent } from './gameboard-tile/gameboard-tile.component';
 import { CommonModule } from '@angular/common';
 import { Tile } from '../models/Tile';
@@ -10,22 +10,19 @@ import { Tile } from '../models/Tile';
   styleUrl: './gameboard.component.scss'
 })
 export class GameboardComponent {
+  @Input() tileCount: number = 10;
   tiles: Tile[] = [];
 
-  // ngOnChanges() {
-  //   this.generateTiles();
-  // }
-
-  constructor() {
-    this.generateTiles(10)
+  ngOnChanges() {
+    this.generateTiles();
   }
-  
-  private generateTiles(count: number) {
+
+  private generateTiles() {
+    this.tiles = [];
     this.tiles.push(new Tile(1, "start-tile", "Start", "Begin your journey"))
-    for (let i = 2; i <= count; i++) {
+    for (let i = 2; i <= this.tileCount; i++) {
       this.tiles.push(createTileAttributes(i));
     }
-    console.log(this.tiles);
   }
 }
 

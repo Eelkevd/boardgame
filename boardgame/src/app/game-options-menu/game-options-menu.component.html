@@ -1,7 +1,11 @@
 <div class="container">
-    <form (submit)="onSubmit(event)">
-        <label for="tiles">Amount of tiles</label>
-        <input type="number" id="tiles" [(ngModel)]="tileCount" name="tiles">
-        <input type="submit" value="Submit">
-    </form>
+  <!-- <div class="form-wrapper"> -->
+  <form (submit)="onSubmit($event)">
+    <div class="tiles-field">
+      <label for="tiles">Amount of tiles</label>
+      <input type="number" id="tiles" [(ngModel)]="tileCount" name="tiles">
+    </div>
+    <input type="submit" value="Submit" class="btn-submit">
+  </form>
+  <!-- </div> -->
 </div>
