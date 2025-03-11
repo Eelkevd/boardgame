@@ -1,11 +1,10 @@
 <div class="container">
-  <!-- <div class="form-wrapper"> -->
+    <h1>Game Options</h1>
   <form (submit)="onSubmit($event)">
-    <div class="tiles-field">
+    <div class="form-field">
       <label for="tiles">Amount of tiles</label>
       <input type="number" id="tiles" [(ngModel)]="tileCount" name="tiles">
     </div>
     <input type="submit" value="Submit" class="btn-submit">
   </form>
-  <!-- </div> -->
 </div>

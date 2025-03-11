@@ -1,7 +1,9 @@
+@use '../../styles/variables.scss' as *;
+
 .container {
-    background-color: rgb(0, 0, 0);
-    padding: 0px;
-    height: 10vh;
+    background-color: $background-color-dark;
+    padding: 20px 40px;
+    height: fit-content;
 
     form {
         display: grid;
