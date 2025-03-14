@@ -1,6 +1,16 @@
 <main class="main">
     <div class="container">
-        <app-game-options-menu (tileCountChange)="updateTileCount($event)"></app-game-options-menu>
+        <div *ngIf="showMenu">
+            <app-game-options-menu (tileCountChange)="updateTileCount($event)"></app-game-options-menu>
+        </div>
+        <button class="btn-show-menu" (click)="toggleMenu()">
+            <span *ngIf="!showMenu">
+                <img src="/assets/icons/keyboard_arrow_down_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
+            </span>
+            <span *ngIf="showMenu">
+                <img src="/assets/icons/keyboard_arrow_up_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png">
+            </span>
+        </button>
         <app-gameboard [tileCount]="tileCount"></app-gameboard>
     </div>
 </main>

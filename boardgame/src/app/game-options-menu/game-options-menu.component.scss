@@ -8,5 +8,17 @@
     form {
         display: grid;
         color: wheat;
+        max-width: 50%;
+        gap: 5px;
+
+        .form-field {
+            display: grid;
+            grid-template-rows: 2fr;
+            row-gap: 3px;
+
+            input {
+                padding: 5px 3px;
+            }
+        }
     }
 }
