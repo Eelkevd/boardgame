@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gameboard-tile',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './gameboard-tile.component.html',
   styleUrl: './gameboard-tile.component.scss'
 })
@@ -12,5 +13,11 @@ export class GameboardTileComponent {
   @Input() tileName!: string;
   @Input() tileEffect!: string;
 
+  // getTileName(): string {
+  //   switch (this.tileName) {
+  //     case 'pitfall':
+  //       return 'tile'
+  //   }
+  // }
 }
 

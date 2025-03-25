@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'styles/variables.scss' as *;
+
+.btn-submit {
+    width: 70px;
+    height: 30px;
+    background-color: $primary-color;
+    margin: 6px 0px;
+    
+    &:hover {
+        background-color: $primary-color-darker;
+        color: bisque;
+    }
+}
+
+body {
+    font-family: $text-body-regular;
+}
+
+h1 {
+    color: $text-color;
+    font-family: $text-h1-cursif;
+    font-weight: 700;
+}
+
+// fonts
+@font-face {
+    font-family: 'MedievalSharp-Regular';
+    src: url('/assets/fonts/MedievalSharp-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Almendra-Regular';
+    src: url('/assets/fonts/Almendra-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Almendra-Bold';
+    src: url('/assets/fonts/Almendra-Bold.ttf') format('truetype');
+}

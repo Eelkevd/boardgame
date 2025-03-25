@@ -1,22 +1,70 @@
+@use '../../../styles/variables.scss'as *;
+
 .tile {
-    width: 100px;
-    height: 100px;
-    background-color: lightgray;
-    border: 1px solid black;
-    display: grid;
-    grid-template-rows: auto 40%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: $primary-color-darker;
+  color: $text-color;
+  border: 2px solid $background-color-dark;
+  display: grid;
+  grid-template-columns: repeat(3, 20px) 40px;
+  grid-template-rows: auto;
+  place-items: center;
+  align-content: space-between;
+  text-align: right;
 
-    #id {
-        font-size: x-large;
-        padding: 4px;
-        padding: 0px;
-    }
+  #tileNumber {
+    display: flex;
+    justify-self: right;
+    padding: 4px;
+    font-size: 22px;
+    grid-column: 4;
+  }
+  #tileName {
+    grid-column: 3;
+    padding: 1px 8px;
+    margin-bottom: 2px;
+    background-color: $background-color-lighter;
+    color: $text-color;
+    border: 2px solid $text-color;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 70px; 
+  }
+}
 
-    #description {
-        font-size: larger;
-        padding: 0px;
-    }
+.tile-pitfall {
+  background-color: rgb(255, 51, 29);
+  background-image: url('/assets/images/tile-pitfall-minimalistic.webp');
+  background-size: cover;
+  color: rgb(241, 239, 239);
+  border: 2px solid rgb(255, 25, 0);
+
+  #tileNumber {
+    color: $background-color-lighter;
+  }
+}
+
+.tile-merchant {
+  background-color: rgb(211, 173, 25);
+  background-image: url('/assets/images/tile-merchant-minimalistic.webp');
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 248, 53);
+
+  #tileNumber {
+    color: $background-color-dark;
+  }
+}
+
+.tile-forest {
+  background-color: rgb(83, 121, 27);
+  background-image: url('/assets/images/tile-forest-minimalist.webp');
+  background-size: cover;
+  border: 2px solid rgb(151, 212, 58);
+
+  #tileNumber {
+    color: $background-color-dark;
+  }
 }
