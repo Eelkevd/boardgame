@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class TileService {
 
   private tileCountTracker = new BehaviorSubject<number>(10);
-  tileCount$ = this.tileCountTracker.asObservable();
+  tileCount = this.tileCountTracker.asObservable();
 
   setTileCount(count: number) {
     this.tileCountTracker.next(count);
