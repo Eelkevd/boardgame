@@ -12,12 +12,5 @@ export class GameboardTileComponent {
   @Input() tileId!: string;
   @Input() tileName!: string;
   @Input() tileEffect!: string;
-
-  // getTileName(): string {
-  //   switch (this.tileName) {
-  //     case 'pitfall':
-  //       return 'tile'
-  //   }
-  // }
 }
 

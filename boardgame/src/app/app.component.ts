@@ -18,7 +18,6 @@ export class AppComponent {
   updateTileCount(newCount: number) {
     this.tileCount = newCount;
   }
-  // title = 'boardgame';
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
