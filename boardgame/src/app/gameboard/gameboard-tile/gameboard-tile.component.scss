@@ -7,21 +7,25 @@
   color: $text-color;
   border: 2px solid $background-color-dark;
   display: grid;
-  grid-template-columns: repeat(3, 20px) 40px;
   grid-template-rows: auto;
   place-items: center;
   align-content: space-between;
   text-align: right;
+  gap: 5px;
+
+  transition: 
+    width 0.2s,  
+    height 0.2s;
 
   #tileNumber {
     display: flex;
     justify-self: right;
     padding: 4px;
     font-size: 22px;
-    grid-column: 4;
   }
   #tileName {
-    grid-column: 3;
+    display: flex;
+    justify-self: center;
     padding: 1px 8px;
     margin-bottom: 2px;
     background-color: $background-color-lighter;
@@ -31,6 +35,11 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 70px; 
+  }
+
+  &:hover {
+    width: 105px;
+    height: 105px;
   }
 }
 
