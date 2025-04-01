@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { GameboardTileComponent } from './gameboard-tile/gameboard-tile.component';
 import { CommonModule } from '@angular/common';
-import { Tile } from '../models/Tile';
+import { Tile } from '../../models/Tile';
 import { TileService } from '../../services/tile.service';
+import { PlayerMovementTrackerService } from '../../services/player-movement-tracker.service';
+import { PlayerComponent } from '../player/player.component';
 
 @Component({
   selector: 'app-gameboard',
-  imports: [GameboardTileComponent, CommonModule],
+  imports: [GameboardTileComponent, PlayerComponent, CommonModule],
   templateUrl: './gameboard.component.html',
   styleUrl: './gameboard.component.scss'
 })
@@ -14,7 +16,10 @@ export class GameboardComponent {
   tileCount: number = 10;
   tiles: Tile[] = [];
   
-  constructor(private tileService: TileService) {}
+  constructor(
+    private tileService: TileService,
+    private playerMovementTrackerService: PlayerMovementTrackerService
+  ) {}
 
   ngOnInit() {
     this.tileService.tileCount.subscribe((count) => {
@@ -25,10 +30,13 @@ export class GameboardComponent {
 
   private generateTiles() {
     this.tiles = [];
-    this.tiles.push(new Tile(1, "start-tile", "Start", "Begin your journey"))
+    this.tiles.push(new Tile(1, "start-tile", "Start", "Begin your journey"));
+
     for (let i = 2; i <= this.tileCount; i++) {
       this.tiles.push(createTileAttributes(i));
     }
+
+    this.playerMovementTrackerService.moveToTile(this.tiles[0]);
   }
 }
 
@@ -53,5 +61,5 @@ function createTileAttributes(tileNumber: number): Tile {
     Math.random().toString(36).substring(2, 8),
     tileName,
     tileEffect
-  )
+  );
 }
