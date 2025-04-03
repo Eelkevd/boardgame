@@ -1,15 +1,12 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TileService {
-
-  private tileCountTracker = new BehaviorSubject<number>(10);
-  tileCount = this.tileCountTracker.asObservable();
+  tileCount = signal<number>(10);
 
   setTileCount(count: number) {
-    this.tileCountTracker.next(count);
-  }
+    this.tileCount.set(count);
+  };
 }

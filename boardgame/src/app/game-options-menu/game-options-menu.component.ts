@@ -9,10 +9,11 @@ import { TileService } from '../../services/tile.service';
   styleUrl: './game-options-menu.component.scss'
 })
 export class GameOptionsMenuComponent {
-  @Output() tileCountChange: EventEmitter<number> = new EventEmitter<number>();
-  tileCount: number = 10;
+  tileCount!: number;
 
-  constructor(private tileService: TileService) {}
+  constructor(private tileService: TileService) {
+    this.tileCount = this.tileService.tileCount();
+  }
 
   onSubmit(event: Event) {
     event.preventDefault();

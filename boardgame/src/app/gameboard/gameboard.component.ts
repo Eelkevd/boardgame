@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, Signal } from '@angular/core';
 import { GameboardTileComponent } from './gameboard-tile/gameboard-tile.component';
 import { CommonModule } from '@angular/common';
 import { Tile } from '../../models/Tile';
@@ -13,26 +13,28 @@ import { PlayerComponent } from '../player/player.component';
   styleUrl: './gameboard.component.scss'
 })
 export class GameboardComponent {
-  tileCount: number = 10;
+  tileCount!: Signal<number>;
   tiles: Tile[] = [];
-  
+  // readonly tileCountComputed = computed(() => this.tileCount());
+
   constructor(
     private tileService: TileService,
     private playerMovementTrackerService: PlayerMovementTrackerService
-  ) {}
-
-  ngOnInit() {
-    this.tileService.tileCount.subscribe((count) => {
-      this.tileCount = count;
-      this.generateTiles();
+  ) {
+    this.tileCount = this.tileService.tileCount;
+    effect(() => {
+      const count = this.tileCount();
+      this.generateTiles(count);
     })
   }
 
-  private generateTiles() {
+  ngOnInit() { }
+
+  private generateTiles(count: number) {
     this.tiles = [];
     this.tiles.push(new Tile(1, "start-tile", "Start", "Begin your journey"));
 
-    for (let i = 2; i <= this.tileCount; i++) {
+    for (let i = 2; i <= count; i++) {
       this.tiles.push(createTileAttributes(i));
     }
 
