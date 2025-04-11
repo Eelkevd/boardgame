@@ -2,6 +2,7 @@
   <div class="tile-wrapper">
     <app-gameboard-tile class="tile" *ngFor="let tile of tiles" [tileNumber]="tile.tileNumber" [tileId]="tile.tileId"
       [tileName]="tile.tileName" [tileEffect]="tile.tileEffect"></app-gameboard-tile>
-      <app-player></app-player>
-    </div>
+    <app-player></app-player>
+    <button class="btn-move" (click)="movePlayer()">Move Player</button>
+  </div>
 </div>

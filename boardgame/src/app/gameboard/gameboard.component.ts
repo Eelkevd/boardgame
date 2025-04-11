@@ -15,11 +15,10 @@ import { PlayerComponent } from '../player/player.component';
 export class GameboardComponent {
   tileCount!: Signal<number>;
   tiles: Tile[] = [];
-  // readonly tileCountComputed = computed(() => this.tileCount());
 
   constructor(
     private tileService: TileService,
-    private playerMovementTrackerService: PlayerMovementTrackerService
+    public playerMovementTrackerService: PlayerMovementTrackerService
   ) {
     this.tileCount = this.tileService.tileCount;
     effect(() => {
@@ -38,8 +37,13 @@ export class GameboardComponent {
       this.tiles.push(createTileAttributes(i));
     }
 
-    this.playerMovementTrackerService.moveToTile(this.tiles[0]);
+    this.playerMovementTrackerService.setTiles(this.tiles);
+  };
+
+  movePlayer() {
+    this.playerMovementTrackerService.moveToTile();
   }
+  
 }
 
 function createTileAttributes(tileNumber: number): Tile {

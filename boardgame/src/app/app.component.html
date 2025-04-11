@@ -1,7 +1,7 @@
 <main class="main">
     <div class="container">
         <div *ngIf="showMenu">
-            <app-game-options-menu (tileCountChange)="updateTileCount($event)"></app-game-options-menu>
+            <app-game-options-menu></app-game-options-menu>
         </div>
         <button class="btn-show-menu" (click)="toggleMenu()">
             <span *ngIf="!showMenu">
