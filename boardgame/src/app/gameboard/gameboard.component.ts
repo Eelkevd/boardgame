@@ -43,7 +43,6 @@ export class GameboardComponent {
   movePlayer() {
     this.playerMovementTrackerService.moveToTile();
   }
-  
 }
 
 function createTileAttributes(tileNumber: number): Tile {

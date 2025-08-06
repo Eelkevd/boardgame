@@ -27,14 +27,20 @@ export class PlayerMovementTrackerService {
   moveToTile() {
     const diceRoll = Math.floor(Math.random() * 6) + 1;
     const current = this.currentTile();
-    const currentIndexPosition = this.allTiles.findIndex(t => t.tileId === current?.tileId)
+    const currentIndexPosition = this.getTileIndex();
     const newIndexPosition = currentIndexPosition + diceRoll;
 
     if(newIndexPosition < this.allTiles.length) {
       this.currentTile.set(this.allTiles[newIndexPosition]);
-    }
+    };
 
     console.log("player rolled a:", diceRoll)
     console.log(this.currentTile())
   };
-}
+
+  getTileIndex(): number {
+    const current = this.currentTile();
+    if (!current) return -1;
+    return this.allTiles.findIndex(t => t.tileId === current.tileId)
+  };
+};

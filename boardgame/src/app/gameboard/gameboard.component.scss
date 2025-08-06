@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  place-items: center;
+  // place-items: center;
   grid-template-columns: 1fr;
   height: 100vh;
   background-image: url('/assets/images/background-3.webp');
@@ -12,12 +12,13 @@
 
 .tile-wrapper {
   width: 85%;
+  position: relative;
   display: grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  // place-items: center;
+  grid-template-columns: repeat(10, 100px);
   gap: 10px 10px;
   justify-content: center;
-
+  // align-content: start;
   .tile {
     align-self: center;
   }
